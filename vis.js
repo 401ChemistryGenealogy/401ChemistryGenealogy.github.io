@@ -1,0 +1,56 @@
+/**
+ * Created by steve on 21/01/16.
+ */
+var width = 1000,
+    height = 700;
+
+var tree = d3.layout.tree()
+    .size([height, width - 200]);
+
+var diagonal = d3.svg.diagonal()
+    .projection(function (d) {
+        return [d.y, d.x];
+    });
+
+var svg = d3.select(".vis").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .append("g");
+
+d3.json("flare.json", function (error, json) {
+    if (error) throw error;
+
+    var nodes = tree.nodes(json),
+        links = tree.links(nodes);
+
+    var link = svg.selectAll("path.link")
+        .data(links)
+        .enter().append("path")
+        .attr("class", "link")
+        .attr("d", diagonal);
+
+    var node = svg.selectAll("g.node")
+        .data(nodes)
+        .enter().append("g")
+        .attr("class", "node")
+        .attr("transform", function (d) {
+            return "translate(" + d.y + "," + d.x + ")";
+        })
+
+    node.append("circle")
+        .attr("r", 4.5);
+
+    node.append("text")
+        .attr("dx", function (d) {
+            return d.children ? -8 : 8;
+        })
+        .attr("dy", 3)
+        .attr("text-anchor", function (d) {
+            return d.children ? "end" : "start";
+        })
+        .text(function (d) {
+            return d.name;
+        });
+});
+
+d3.select(self.frameElement).style("height", height + "px");

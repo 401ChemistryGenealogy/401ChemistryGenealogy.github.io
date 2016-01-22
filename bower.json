@@ -1,0 +1,22 @@
+{
+  "name": "d3-example",
+  "authors": [
+    "Steven Myers <slmyers@ualberta.ca>"
+  ],
+  "description": "example of d3",
+  "main": "index.js",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "d3": "~3.5.12"
+  }
+}

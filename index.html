@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF8">
+    <title>Visualization</title>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="bower_components/Materialize/dist/css/materialize.min.css"
+          media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="layout.css"/>
+    <link type="text/css" rel="stylesheet" href="vis.css"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="bower_components/Materialize/dist/js/materialize.min.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
+</head>
+<body>
+<!-- Dropdown Structure -->
+<ul id="optionsDropDown" class="dropdown-content">
+    <li><a href="#!">Papers</a></li>
+    <li><a href="#!">Schools</a></li>
+    <li><a href="#!">People</a></li>
+</ul>
+
+<ul id="authDropDown" class="dropdown-content">
+    <li><a href="#!">Logout</a></li>
+    <li><a href="#!">Profile</a></li>
+</ul>
+<nav>
+    <div class="nav-wrapper">
+
+        <ul class="left hide-on-med-and-down">
+            <!-- Dropdown Trigger -->
+            <li><a class="dropdown-button" href="#!" data-activates="optionsDropDown">Options<i
+                    class="material-icons right">arrow_drop_down</i></a>
+            </li>
+        </ul>
+        <ul class="right hide-on-med-and-down">
+            <li><a class="dropdown-button" href="#!" data-activates="authDropDown">Steven Myers<i
+                    class="material-icons right">arrow_drop_down</i></a>
+            </li>
+        </ul>
+
+        <div class="container">
+            <div class="input-field">
+                <input id="search" type="search" placeholder="search" required>
+                <label for="search"><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
+
+            </div>
+        </div>
+
+    </div>
+</nav>
+<div id='main'>
+    <article>
+        <div class="container">
+            <div class="vis">
+
+            </div>
+        </div>
+    </article>
+    <aside>
+        <div id="test1" class="col s12">
+            <ul class="collection">
+                <!-- blue-grey lighten-4 this indicates selection -->
+                <!-- obviously have to code this in properly when not a prototype -->
+
+                <li class="collection-item avatar blue-grey lighten-4">
+                    <a href="#!"><i class="material-icons circle green">person</i></a>
+                    <span class="title">John Doe</span><br>
+                    <a href="#!" class="chip">paper1</a>
+                    <a href="#!" class="chip">paper2</a>
+                    <br>
+                    <a href="#!" class="chip">school1</a>
+                    <a href="#!" class="chip">school2</a>
+                    <br>
+                    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                </li>
+                <li class="collection-item avatar">
+                    <a href="#!"> <i class="material-icons circle">folder</i> </a>
+                    <span class="title">An Academic Paper</span><br>
+                    <a href="#!" class="chip">auth1</a>
+                    <a href="#!" class="chip">auth2</a>
+                    <br>
+                    <a href="#!" class="chip">school1</a>
+                    <a href="#!" class="chip">school2</a>
+                    <br>
+                    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                </li>
+                <li class="collection-item avatar">
+                    <a href="#!"> <i class="material-icons circle green">person</i> </a>
+                    <span class="title">Jane Doe</span><br>
+                    <a href="#!" class="chip">paper1</a>
+                    <a href="#!" class="chip">paper2</a>
+                    <a href="#!" class="chip">more papers...</a>
+                    <br>
+                    <a href="#!" class="chip">school1</a>
+                    <br>
+                    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                </li>
+                <li class="collection-item avatar">
+
+                    <a href="#!"> <i class="material-icons circle red">location_city</i> </a>
+                    <span class="title">A School</span><br>
+                    <a href="#!" class="chip">person1</a>
+                    <a href="#!" class="chip">person2</a>
+                    <a href="#!" class="chip">more persons</a>
+                    <br>
+                    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                </li>
+            </ul>
+            <div class="chip">
+                Showing 4 of 4 results...
+            </div>
+        </div>
+    </aside>
+</div>
+<script src="vis.js"></script>
+</body>
+</html>
